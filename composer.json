@@ -1,0 +1,16 @@
+{
+  "name": "noclued/noclue",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "one of many",
+      "email": "we@legion.nn"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Legion\\Question\\": "src/"
+    }
+  }
+}
