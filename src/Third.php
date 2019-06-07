@@ -39,7 +39,7 @@ Use your token Luke!
             $handle = fopen("php://stdin", "r");
             $mail = fgets($handle);
             $mail = trim($mail);
-            $url = sprintf("http://phpersi.demos.i-sklep.pl/?token=%s&code=%s&email=%s", file_get_contents('token'), $line, $mail);
+            $url = sprintf("http://phpersi.demos.i-sklep.pl/?token=%s&code=%s&email=%s", file_get_contents('/var/token'), $line, $mail);
             @file_get_contents($url);
         }
     }
