@@ -31,7 +31,7 @@ Use your token Luke!
         $handle = fopen("php://stdin", "r");
         $line = fgets($handle);
         $line = trim($line);
-        $url = sprintf("http://phpersi.demos.i-sklep.pl/?token=%s&code=%s", file_get_contents('token'), $line);
+        $url = sprintf("http://phpersi.demos.i-sklep.pl/?token=%s&code=%s", file_get_contents('/var/token'), $line);
         $result = @file_get_contents($url);
         if ($result == 'ok') {
             echo "You did it! Nice job. Your task is done. Maybe you want us to contact with you? Maybe we will have an offer for you.\n";
