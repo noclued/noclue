@@ -55,5 +55,6 @@ class First extends AbstractGame
         }
 
         set_time_limit($currentLimit);
+        $this->sayDone();
     }
 }

@@ -33,7 +33,7 @@ Use your token Luke!
         $line = trim($line);
         $url = sprintf("http://phpersi.demos.i-sklep.pl/?token=%s&code=%s", file_get_contents('token'), $line);
         $result = @file_get_contents($url);
-        if ($result == 'ok' || true) {
+        if ($result == 'ok') {
             echo "You did it! Nice job. Your task is done. Maybe you want us to contact with you? Maybe we will have an offer for you.\n";
             echo "If yes type ur email here. If not just push enter.";
             $handle = fopen("php://stdin", "r");
@@ -44,32 +44,4 @@ Use your token Luke!
         }
     }
 
-    protected function fib(int $length = 32) : array
-    {
-        $retVal = [];
-        while ($length >= 0) {
-            $retVal[] = $this->getFib($length--);
-        }
-
-        sort($retVal);
-
-        return $retVal;
-    }
-
-    protected function getFib(int $n)
-    {
-        return round(pow((sqrt(5)+1)/2, $n) / sqrt(5));
-    }
-
-    protected function generateRandomString(int $length = 10)
-    {
-        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-        $charactersLength = strlen($characters);
-        $randomString = '';
-        for ($i = 0; $i < $length; $i++) {
-            $randomString .= $characters[rand(0, $charactersLength - 1)];
-        }
-
-        return $randomString;
-    }
 }
