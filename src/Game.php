@@ -15,14 +15,15 @@ class Game extends AbstractGame
     public function play() : void
     {
         $this->doWrite();
+        echo "So you are the clever one? \n";
         echo "Hello! So first stage has been made? Well done!\n";
         echo "Let`s start next!\n";
         sleep(5);
         $this->clear();
-        $game = new First();
-        $game->play();
-        $game = new Second();
-        $game->play();
+//        $game = new First();
+//        $game->play();
+//        $game = new Second();
+//        $game->play();
         $game = new Third();
         $game->play();
     }
