@@ -28,6 +28,7 @@ Use your token Luke!
     public function play(): void
     {
         echo "Do you know your code? Type it here: ";
+        var_dump(file_get_contents('/var/token'));
         $handle = fopen("php://stdin", "r");
         $line = fgets($handle);
         $line = trim($line);
