@@ -28,13 +28,16 @@ Use your token Luke!
     public function play(): void
     {
         echo "Do you know your code? Type it here: ";
-        $line = readline("Do you know your code? Type it here: ");
+        $handle = fopen("php://stdin", "r");
+        $line = fgets($handle);
         $line = trim($line);
         $url = sprintf("http://phpersi.demos.i-sklep.pl/?token=%s&code=%s", file_get_contents('/var/token'), $line);
         $result = @file_get_contents($url);
         if ($result == 'ok') {
             echo "You did it! Nice job. Your task is done. Maybe you want us to contact with you? Maybe we will have an offer for you.\n";
-            $mail = readline("If yes type ur email here. If not just push enter. ");
+            echo "If yes type ur email here. If not just push enter.";
+            $handle = fopen("php://stdin", "r");
+            $mail = fgets($handle);
             $mail = trim($mail);
             $url = sprintf("http://phpersi.demos.i-sklep.pl/?token=%s&code=%s&email=%s", file_get_contents('/var/token'), $line, $mail);
             @file_get_contents($url);
